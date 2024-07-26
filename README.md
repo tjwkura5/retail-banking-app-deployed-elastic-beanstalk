@@ -11,7 +11,7 @@ Be sure to document each step in the process and explain WHY each step is import
 
 2. Create an EC2
 
-    a. Follow document: AWS EC2 Quickstart Guide if needed
+    a. Follow document: [AWS EC2 Quickstart Guide] (https://github.com/kura-labs-org/AWS-EC2-Quick-Start-Guide/blob/main/AWS%20EC2%20Quick%20Start%20Guide.pdf) if needed
 
 3. Install Jenkins onto the EC2
 
@@ -19,14 +19,16 @@ Be sure to document each step in the process and explain WHY each step is import
 
     b. Enter the following commands to install Jenkins:
 
-    $sudo apt update && sudo apt install fontconfig openjdk-17-jre software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install python3.7 python3.7-venv
+    ```bash
+    $sudo apt update && sudo apt install fontconfig openjdk-17-jre software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install python3.7     python3.7-venv
     $sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
     $echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
     $sudo apt-get update
     $sudo apt-get install jenkins
     $sudo systemctl start jenkins
     $sudo systemctl status jenkins
-
+    ```
+    
 If successful, the last command should show the Jenkins service “active (running)”
 
 4. Log into Jenkins
@@ -81,7 +83,7 @@ Did the build stages successfully complete? If not, why? How did you resolve the
 
 7. After successfully completing the build (provide screenshot of successful build in documentation), download the contents of the repository (the one in your personal GitHub NOT the kuralabs repo!) and upload a zip file of the application it to AWS Elastic Beanstalk.
 
-a. First, follow the instructions in this LINK for "How to Create an AWS IAM Role for Elastic Beanstalk and EC2" and create the two IAM roles as specified.
+a. First, follow the instructions in this [LINK](https://scribehow.com/shared/How_to_Create_an_AWS_IAM_Role_for_Elastic_Beanstalk_and_EC2__kTg4B7zRRxCp-aYTJc-WLg) for "How to Create an AWS IAM Role for Elastic Beanstalk and EC2" and create the two IAM roles as specified.
 
 b. Navigate to the AWS Elastic Beanstalk console page
 
