@@ -11,7 +11,7 @@ Be sure to document each step in the process and explain WHY each step is import
 
 2. Create an EC2
 
-    a. Follow document: [AWS EC2 Quickstart Guide] (https://github.com/kura-labs-org/AWS-EC2-Quick-Start-Guide/blob/main/AWS%20EC2%20Quick%20Start%20Guide.pdf) if needed
+    a. Follow document: [AWS EC2 Quickstart Guide](https://github.com/kura-labs-org/AWS-EC2-Quick-Start-Guide/blob/main/AWS%20EC2%20Quick%20Start%20Guide.pdf) if needed
 
 3. Install Jenkins onto the EC2
 
