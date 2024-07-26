@@ -7,17 +7,17 @@ Be sure to document each step in the process and explain WHY each step is import
 
 ## Instructions
 
-Clone this repository to your GitHub account
+1. Clone this repository to your GitHub account
 
-Create an EC2
+2. Create an EC2
 
-a. Follow document: AWS EC2 Quickstart Guide if needed
+    a. Follow document: AWS EC2 Quickstart Guide if needed
 
-Install Jenkins onto the EC2
+3. Install Jenkins onto the EC2
 
-a. Connect to the EC2 terminal
+    a. Connect to the EC2 terminal
 
-b. Enter the following commands to install Jenkins:
+    b. Enter the following commands to install Jenkins:
 
     $sudo apt update && sudo apt install fontconfig openjdk-17-jre software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install python3.7 python3.7-venv
     $sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -29,31 +29,31 @@ b. Enter the following commands to install Jenkins:
 
 If successful, the last command should show the Jenkins service “active (running)”
 
-Log into Jenkins
+4. Log into Jenkins
 
-a. Enter initial admin password
+    a. Enter initial admin password
 
-b. Install suggested plugins
+    b. Install suggested plugins
 
-c. Create first admin user
+    c. Create first admin user
 
-Create a Multi-Branch pipeline
+5. Create a Multi-Branch pipeline
 
-a. Click on “New Item” in the menu on the left of the page
+    a. Click on “New Item” in the menu on the left of the page
 
-b. Enter a name for your pipeline
+    b. Enter a name for your pipeline
 
-c. Select “Multibranch Pipeline”
+    c. Select “Multibranch Pipeline”
 
-d. Under “Branch Sources”, click “Add source” and select “GitHub”
+    d. Under “Branch Sources”, click “Add source” and select “GitHub”
 
-e. Click “+ Add” and select “Jenkins”
+    e. Click “+ Add” and select “Jenkins”
 
-f. Make sure “Kind” reads “Username and password”
+    f. Make sure “Kind” reads “Username and password”
 
-g. Under “Username”, enter your GitHub username
+    g. Under “Username”, enter your GitHub username
 
-h. Under “Password” ,enter your GitHub personal access token
+    h. Under “Password” ,enter your GitHub personal access token
 
 To get the GitHub personal access token, first log into GitHub and click on your profile icon on the top right of the page.
 
@@ -69,17 +69,17 @@ v. Set an expiration date and then select the following "scopes": repo, admin:re
 
 This token can only be viewed ONCE! Make sure you enter the token properly (or save it) before leaving the page otherwise a new token must be generated!
 
-Connect GitHub repository to Jenkins
+6. Connect GitHub repository to Jenkins
 
-a. Enter the repository HTTPS URL and click "Validate"
+    a. Enter the repository HTTPS URL and click "Validate"
 
-b. Make sure that the "Build Configuration" section says "Mode: by Jenkinsfile" and "Script Path: Jenkinsfile"
+    b. Make sure that the "Build Configuration" section says "Mode: by Jenkinsfile" and "Script Path: Jenkinsfile"
 
-c. Click "Save" and a build should start automatically
+    c. Click "Save" and a build should start automatically
 
 Did the build stages successfully complete? If not, why? How did you resolve the issue? What did each stage do?
 
-After successfully completing the build (provide screenshot of successful build in documentation), download the contents of the repository (the one in your personal GitHub NOT the kuralabs repo!) and upload a zip file of the application it to AWS Elastic Beanstalk.
+7. After successfully completing the build (provide screenshot of successful build in documentation), download the contents of the repository (the one in your personal GitHub NOT the kuralabs repo!) and upload a zip file of the application it to AWS Elastic Beanstalk.
 
 a. First, follow the instructions in this LINK for "How to Create an AWS IAM Role for Elastic Beanstalk and EC2" and create the two IAM roles as specified.
 
@@ -109,7 +109,7 @@ m. Continue to the "Review" page and then click "Submit".
 
 n. When the "environment is successfully launched", click on the link provided in the "Domain" and confirm that the application has deployed!
 
-Document! All projects have documentation so that others can read and understand what was done and how it was done. Create a README.md file in your repository that describes:
+8. Document! All projects have documentation so that others can read and understand what was done and how it was done. Create a README.md file in your repository that describes:
 
 a. The "PURPOSE" of the Workload,
 
