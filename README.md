@@ -224,7 +224,9 @@ Back at work, I first tried modifying the Procfile in the current directory, but
 
 Next, I attempted to add a python.config file to define the WSGI path, suspecting an incorrect configuration. Unfortunately, this approach also failed.
 
-Frustrated, I was about to give up but luckily a fellow student had already started this workload before I did. He had encountered the same issue and managed to resolve it.  Fortunately, he was able to point me in the right direction when I sought his advice. I started watching some Youtube tutorials and I noticed an interesting detail: when they zip the application before uploading to beanstalck they're only zipping certain files in the root directory of the application and not the entire folder. When I tried doing it this way It worked but initially I had no idea why. 
+Frustrated, I was about to give up but luckily a fellow student had already started this workload before I did. He had encountered the same issue and managed to resolve it.  Fortunately, he was able to point me in the right direction when I sought his advice. 
+
+I started watching some Youtube tutorials and I noticed an interesting detail: when they zip the application before uploading to beanstalk they're only zipping certain files in the root directory of the application and not the entire folder. When I tried doing it this way It worked but initially I had no idea why. 
 
 Elastic Beanstalk requires the application's entry point to be located at the top level of the deployment package. Additionally, simplifying the directory structure by including only essential files at the root level reduces the complexity of Python's module search path. The following is the final product:
 
@@ -234,19 +236,31 @@ Elastic Beanstalk requires the application's entry point to be located at the to
 
 **What are the benefits of using managed services for cloud infrastructure?**
 
-Reduced operational overhead
-Scalability
-Cost optimization
-Faster time-to-market
+**Reduced operational overhead:** Managed services handle the infrastructure management, provisioning, and maintenance allowing developers to focus on application code.
+
+**Scalability:** Managed services can easily scale resources up or down to meet fluctuating demands, ensuring optimal performance and cost-efficiency.
+
+**Cost optimization:** Managed services can provide cost-effective solutions by optimizing resource utilization and eliminating unnecessary expenses. Keep in mind that this will depend on your application. Ask your solution architect if managed services are right for you.
+
+**Faster time-to-market:** Managed services accelerate deployment and time-to-market by handling infrastructure setup and configuration.
 
 **What are some issues that a retail bank would face choosing this method of deployment and how would you address/resolve them?**
 
-This method of deployment is manual and cumbersome, the next step would be to configure another jenkins pipeline to automate deploying are application to Beanstalk. We can achieve this by using the AWS Elastic Beanstalk publisher Jenkins plugin. 
+This manual deployment process is inefficient. To streamline the process, we should implement a Jenkins pipeline to automate deploying our application to Beanstalk. The AWS Elastic Beanstalk publisher plugin can facilitate this. Automation will save time and reduce human error. Additionally, establishing a staging environment for testing before production deployment is crucial. This approach allows for smoke and regression testing to identify issues early in the process. 
 
-**What are other disadvantages of using elastic beanstalk or similar managed services for deploying applications?** 
+**What are other disadvantages of using elastic beanstalk or similar managed services for deploying applications?**
+
+While managed services offer numerous benefits, they also have some potential drawbacks:
+
+**Less control:** Managed services often abstract away underlying infrastructure details, limiting customization and control over the environment.
+
+**Cost implications:** While managed services can optimize costs in some cases, they might incur additional fees compared to managing infrastructure entirely on your own.
+
+**Performance:** In certain scenarios, the managed service layer can introduce slight performance overhead compared to managing infrastructure directly.
+
 ## Conclusion 
 
-All in all this workload was fun, exciting and frustrating but mostly fun! This document details the process of deploying a retail banking application to AWS Elastic Beanstalk. We successfully leveraged Jenkins for continuous integration and configured Elastic Beanstalk to host our application.
+This project was a challenging but rewarding experience. We successfully leveraged Jenkins for continuous integration and configured Elastic Beanstalk to host our application.
 
 **Key Takeaways:**
 
