@@ -228,7 +228,7 @@ Frustrated, I was about to give up but luckily a fellow student had already star
 
 I started watching some Youtube tutorials and I noticed an interesting detail: when they zip the application before uploading to beanstalk they're only zipping certain files in the root directory of the application and not the entire folder. When I tried doing it this way It worked but initially I had no idea why. 
 
-Elastic Beanstalk requires the application's entry point to be located at the top level of the deployment package. Additionally, simplifying the directory structure by including only essential files at the root level reduces the complexity of Python's module search path. The following is the final product:
+Elastic Beanstalk requires the application's entry point to be located at the top level of the deployment package. This means we needed to simplify the directory structure by not including a parent folder or top-level directory. The following is the final product:
 
 ![Running Application](documentation/running_app.png)
 
@@ -268,4 +268,4 @@ This project was a challenging but rewarding experience. We successfully leverag
 
 * **Elastic Beanstalk:** We utilized Elastic Beanstalk, a PaaS offering from AWS, to simplify deployment and management of the application. It allows focusing on application code rather than server infrastructure.
 
-* **Deployment Challenges:** We encountered issues related to module import paths during deployment. Resolving this involved simplifying the directory structure and including only essential files in the deployed package.
+* **Deployment Challenges:** We encountered issues related to module import paths during deployment. Resolving this involved simplifying the directory structure by removing the top level directory.
