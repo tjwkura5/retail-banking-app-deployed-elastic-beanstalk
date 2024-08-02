@@ -18,7 +18,7 @@
 
 ## Clone Repository
 
-**GitHub** is a platform for developers to store, manage, share, and collaborate on code using Git, a version control system tracking code changes. In this phase we will be coping the files from the kura labs workload 1 repository to our own. 
+**GitHub** is a platform for developers to store, manage, share, and collaborate on code using Git, a version control system tracking code changes. In this phase we will be copying the files from the kura labs workload 1 repository to our own. 
 
 **Steps:**
 
